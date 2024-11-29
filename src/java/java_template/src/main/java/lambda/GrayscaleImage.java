@@ -9,7 +9,10 @@ import saaf.Inspector;
 import saaf.Response;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.image.BufferedImage;
+import java.awt.image.BufferedImageFilter;
+import java.awt.image.ImageFilter;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -22,7 +25,7 @@ import java.util.HashMap;
  * @author Wes Lloyd
  * @author Robert Cordingly
  */
-public class ResizeImage implements RequestHandler<Request, HashMap<String, Object>> {
+public class GrayscaleImage implements RequestHandler<Request, HashMap<String, Object>> {
 
     /**
      * Lambda Function Handler
@@ -51,9 +54,10 @@ public class ResizeImage implements RequestHandler<Request, HashMap<String, Obje
         } catch (IOException e) {
             throw new UncheckedIOException(e);
         }
-        var newImage = new BufferedImage(image.getWidth() / 2, image.getHeight() / 2, BufferedImage.TYPE_INT_ARGB);
+
+        var newImage = new BufferedImage(image.getWidth(), image.getHeight(), BufferedImage.TYPE_BYTE_GRAY);
         var g = newImage.createGraphics();
-        g.drawImage(image, 0, 0, image.getWidth() / 2, image.getHeight() / 2, null);
+        g.drawImage(image, 0, 0, image.getWidth(), image.getHeight(), null);
         g.dispose();
         var os = new ByteArrayOutputStream();
         try {

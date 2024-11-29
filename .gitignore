@@ -938,3 +938,4 @@ Cargo.lock
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/java,node,c++,csharp,python,rust,perl,intellij,visualstudiocode
+.idea
