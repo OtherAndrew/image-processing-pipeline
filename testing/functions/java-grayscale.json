@@ -1,0 +1,6 @@
+{
+	"function": "java-grayscale",
+    "platform": "AWS Lambda",
+    "source": "../nodejs_template",
+    "endpoint": ""
+}
