@@ -1,0 +1,6 @@
+{
+	"function": "java-resize",
+    "platform": "AWS Lambda",
+    "source": "../nodejs_template",
+    "endpoint": ""
+}

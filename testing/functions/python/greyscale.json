@@ -1,0 +1,6 @@
+{
+	"function": "python-greyscale",
+    "platform": "AWS Lambda",
+    "source": "../nodejs_template",
+    "endpoint": ""
+}
